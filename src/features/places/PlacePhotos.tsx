@@ -7,7 +7,7 @@ import Message from "common/message";
 import useToggle from "hooks/useToggle";
 import { DetailsType, PlaceType, PlacePhotoType } from "types";
 import { Row, Col } from 'react-grid-system';
-import { useEffect, useCallback, useState } from "react";
+import { useEffect, useCallback, useState, useMemo } from "react";
 import { getPlacePhotosById } from 'features/places/placeApi';
 
 export default function PlacePhotos({ item, onClose }: DetailsType<PlaceType>) {
@@ -15,6 +15,7 @@ export default function PlacePhotos({ item, onClose }: DetailsType<PlaceType>) {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState("");
     const [photos, setPhotos] = useState<PlacePhotoType[]>([]);
+    const ifPhotos = useMemo(() => photos.length > 0, [photos]);
 
     const getPhotos = useCallback(async () => {
         setIsLoading(true)
@@ -40,7 +41,10 @@ export default function PlacePhotos({ item, onClose }: DetailsType<PlaceType>) {
             </Col>
             {isLoading && <Col sm={12}><Loading /></Col>}
             {error && <Col sm={12}> <Message message={error} /></Col>}
-            {photos.map(photo => <Col sm={12} md={6} lg={4} key={photo.id}>
+            {!ifPhotos && !isLoading && <Col data-cy="noPlaces" sm={12} className="text-center">
+                <Message size="large" message={`We couldn't find any photo for "${item.name}".`} />
+            </Col>}
+            {ifPhotos && photos.map(photo => <Col sm={12} md={6} lg={4} key={photo.id}>
                 <Image data-cy="placeImage" height={300} src={`${photo.prefix}300x300${photo.suffix}`} alt="Place image" />
             </Col>)}
             <Col sm={12} className="text-right">

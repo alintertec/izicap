@@ -13,7 +13,7 @@ import { getPlaces } from 'features/places/placeApi';
 export default function Places() {
     const navigate = useNavigate();
     const [searchParams] = useSearchParams();
-    const [loading, setLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState("");
     const [query] = useState(searchParams.get("query") || "");
     const [lat] = useState(searchParams.get("lat") || "");
@@ -22,12 +22,12 @@ export default function Places() {
     const ifPlaces = useMemo(() => places.length > 0, [places]);
 
     const searchPlaces = useCallback(async () => {
-        setLoading(true)
+        setIsLoading(true)
         const { success, result, message } = await getPlaces({ query, lat, lon })
         if (success) setPlaces(result)
         if (!success) setError(message)
-        setLoading(false)
-    }, [searchParams])
+        setIsLoading(false)
+    }, [query, lat, lon])
 
     const searchAgain = useCallback(() => {
         setPlaces([])
@@ -36,16 +36,16 @@ export default function Places() {
 
     useEffect(() => { searchPlaces(); }, [searchParams])
 
-    if (loading) return <Loading />
+    if (isLoading) return <Loading />
     if (error) return <Error message={error} />
 
     return <Container>
         <Row wrap="wrap">
-            {places.map(place =>
+            {ifPlaces && places.map(place =>
                 <Col data-cy="places" sm={12} md={6} lg={4} className="pa-xsm" key={place.fsq_id} >
                     <PlaceItem place={place} />
                 </Col>)}
-            {!ifPlaces && <Col data-cy="noPlaces" sm={12} className="text-center">
+            {!ifPlaces && !isLoading && <Col data-cy="noPlaces" sm={12} className="text-center">
                 <Message size="large" message={`We couldn't find any result for "${query}".`} />
             </Col>}
             <Col sm={12} className="text-center">

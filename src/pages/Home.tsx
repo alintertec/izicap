@@ -19,8 +19,12 @@ export default function Home() {
         setQuery(event.target.value)
     }
 
+    const onKeyEnter = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if (event.key === "Enter") searchPlaces()
+    }
+
     const searchPlaces = useCallback(async () => {
-        navigate(`/places?query=${query}&lat=${coords.lat}&lon=${coords.lon}`)
+        if (query !== "") navigate(`/places?query=${query}&lat=${coords.lat}&lon=${coords.lon}`)
     }, [query])
 
     const getLocation = useCallback(async () => {
@@ -54,7 +58,7 @@ export default function Home() {
                 <p>Find the best places to eat, drink, shop or visit near your current location. Access over 75 million tips from local experts.</p>
                 <Row wrap="wrap" align="center" >
                     <Col sm={12} md={8} lg={10} >
-                        <Input id="query" data-cy="query" name="query" type="text" placeholder="Search for: coffe, bakery, breakfast ..." required value={query} onChange={onChange} />
+                        <Input id="query" data-cy="query" name="query" type="text" placeholder="Search for: coffe, bakery, breakfast ..." required value={query} onKeyDown={onKeyEnter} onChange={onChange} />
                     </Col>
                     <Col sm={12} md={4} lg={2}>
                         <Button data-cy="search" form="block" disabled={!query} onClick={searchPlaces}>Search</Button>

@@ -21,7 +21,7 @@ export default function PlaceItem({ place }: IProps) {
                 <Header data-cy="placeName" level={4}>{place.name} </Header>
                 <hr />
                 <div data-cy="placeAddress">{`Address: ${place.location.formatted_address}`}</div>
-                <div>{`Region: ${place.location.region}`}</div>
+                <div>{`Region: ${place.location.region || ''}`}</div>
                 <div>{`Country: ${place.location.country}`}</div>
                 <div>{`Distance: ${place.distance}m`}</div>
                 <div>{`Timezone: ${place.timezone}`}</div>
