@@ -12,14 +12,14 @@ Project is created with:
     * Design: Custom css used in 'Common' components like button, inpu, card ...  
     * React Grid: responsive grid system
 * App structure:
-    * Layout:  app layout (ex: nav, main, footer, aside)
-    * Common:  shared reusable commponents like button, input, modal ...
-    * Components:  commponents like navigation, footer with not many features
+    * Layout: app layout (ex: nav, main, footer, aside)
+    * Common: shared reusable commponents like button, input, modal ...
+    * Components: commponents like navigation, footer with not many features
     * Pages: app page components like Home, Places ...
     * Features: places( components, design, api )
-    * Context - for storing places returned from the Api ( not needed but if the app grows switching to Redux Toolkit with RTK will be better option)
-    * Hooks:  custom hooks 
-    * Types:  custom types 
+    * Context:  PlaceContext for storing places returned from the Api ( not needed but if the app grows switching to Redux Toolkit with RTK will be better option)
+    * Hooks: custom hooks 
+    * Types: custom types 
     * Models: creating objects using Class so we can have more controll of reusing the same object
    
 

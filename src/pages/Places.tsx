@@ -29,6 +29,11 @@ export default function Places() {
         setLoading(false)
     }, [searchParams])
 
+    const searchAgain = useCallback(() => {
+        setPlaces([])
+        navigate("/")
+    }, [])
+
     useEffect(() => { searchPlaces(); }, [searchParams])
 
     if (loading) return <Loading />
@@ -44,7 +49,7 @@ export default function Places() {
                 <Message size="large" message={`We couldn't find any result for "${query}".`} />
             </Col>}
             <Col sm={12} className="text-center">
-                <Button data-cy="searchAgain" color="primary" onClick={() => navigate("/")}>Search Again</Button>
+                <Button data-cy="searchAgain" color="primary" onClick={searchAgain}>Search Again</Button>
             </Col>
         </Row>
     </Container>
