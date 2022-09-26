@@ -1,0 +1,36 @@
+.message {
+    word-wrap: break-word;
+    padding: var(--p-lg);
+}
+
+/* colors */
+
+.primary {
+    color: var(--primary);
+}
+
+.secondary {
+    color: var(--secondary);
+}
+
+.tertiary {
+    color: var(--tertiary);
+}
+
+.grey {
+    color: var(--grey);
+}
+
+/* sizes */
+
+.large {
+    font-size: var(--text-lg);
+}
+
+.medium {
+    font-size: var(--text-md);
+}
+
+.small {
+    font-size: var(--text-sm);
+}

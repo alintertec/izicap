@@ -1,0 +1,36 @@
+.modal {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content */
+.modal__content {
+    margin: auto;
+    padding: 20px;
+    max-width: 60%;
+    background-color: white;
+    border-radius: var(--r-sm);
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .modal__content {
+        max-width: 100%;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 992px) {
+    .modal__content {
+        max-width: 80%;
+    }
+}

@@ -1,0 +1,19 @@
+.error {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary);
+    height: 80vh;
+    padding: var(--p-md);
+    text-align: center;
+}
+
+.error__code {
+    font-size: 150px;
+    font-weight: 500;
+}
+
+.error__text {
+    font-size: var(--text-lg);
+}

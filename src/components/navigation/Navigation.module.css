@@ -1,0 +1,24 @@
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--primary);
+    padding: var(--p-md) 0;
+    margin: 0 var(--m-md);
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--primary);
+}
+
+.nav a:hover {
+    color: var(--secondary);
+}
+
+.nav__icon {
+    text-decoration: none;
+    color: var(--primary);
+    font-size: var(--text-lg);
+}

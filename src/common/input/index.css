@@ -1,0 +1,14 @@
+input {
+    width: 100%;
+    padding: var(--p-md);
+    margin: 8px 0;
+    border: 1px solid var(--primary);
+    border-radius: var(--r-sm);
+    box-sizing: border-box;
+    color: var(--primary);
+    font-size: var(--text-md);
+}
+
+label {
+    font-size: var(--text-sm);
+}

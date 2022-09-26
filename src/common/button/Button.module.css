@@ -1,0 +1,99 @@
+.btn {
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    margin: 4px 2px;
+    border-radius: var(--r-sm);
+    border: 1px solid transparent;
+}
+
+.btn:disabled {
+    background-color: gainsboro;
+    color: grey;
+    border: 1px solid var(--grey);
+}
+
+.btn:disabled:hover {
+    background-color: gainsboro;
+    color: grey;
+    border: 1px solid var(--grey);
+}
+
+/* Colors */
+
+.primary {
+    background-color: var(--primary);
+    color: white;
+}
+
+.primary:hover {
+    background-color: white;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+.secondary {
+    background-color: var(--secondary);
+    color: white;
+}
+
+.secondary:hover {
+    background-color: white;
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
+}
+
+.tertiary {
+    background-color: var(--tertiary);
+    color: white;
+}
+
+.tertiary:hover {
+    background-color: white;
+    color: var(--tertiary);
+    border: 1px solid var(--tertiary);
+}
+
+.grey {
+    background-color: var(--grey);
+    color: var(--primary);
+}
+
+.grey:hover {
+    background-color: white;
+    color: var(--primary);
+    border: 1px solid var(--grey);
+}
+
+/* sizes */
+
+.large {
+    padding: 28px 45px;
+    font-size: var(--text-lg);
+}
+
+.medium {
+    padding: 18px 35px;
+    font-size: var(--text-md);
+}
+
+.small {
+    padding: 8px 25px;
+    font-size: var(--text-sm);
+}
+
+/* forms */
+.default {
+    width: auto;
+}
+
+.icon {
+    border-radius: 50%;
+    padding: 8px 12px !important;
+    font-weight: bolder;
+}
+
+.block {
+    width: 100%;
+}

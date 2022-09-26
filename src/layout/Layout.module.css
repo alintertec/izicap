@@ -1,0 +1,15 @@
+.layout {
+    display: grid;
+    grid-template-areas:
+        'nav'
+        'main';
+    gap: 10px;
+}
+
+.layout__nav {
+    grid-area: nav;
+}
+
+.layout__main {
+    grid-area: main;
+}

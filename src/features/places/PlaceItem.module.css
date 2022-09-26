@@ -1,0 +1,4 @@
+.place_content {
+    word-break: break-all;
+    padding: var(--p-md);
+}
