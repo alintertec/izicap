@@ -58,7 +58,7 @@ export default function Home() {
                         <Input id="query" data-cy="query" name="query" type="text" placeholder="Search for: coffe, bakery, breakfast ..." required value={query} onChange={onChange} />
                     </Col>
                     <Col sm={12} md={4} lg={2}>
-                        <Button form="block" disabled={!query} onClick={searchPlaces}>Search</Button>
+                        <Button data-cy="search" form="block" disabled={!query} onClick={searchPlaces}>Search</Button>
                     </Col>
                 </Row>
             </Col>

@@ -16,7 +16,7 @@ export type PlaceType = {
     timezone: string
 }
 
-export type PlacePhoto = {
+export type PlacePhotoType = {
     id: string
     height: number
     width: number

@@ -15,4 +15,4 @@ export type DetailsType<T> = {
     item: T
 }
 
-export type { PlaceType, PlacePhoto } from "./place"
+export type { PlaceType, PlacePhotoType } from "./place"

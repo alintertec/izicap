@@ -18,7 +18,7 @@ export default function PlaceItem({ place }: IProps) {
         {component === "PlacePhotos" && <PlacePhotos item={place} onClose={() => handleComponent("")} />}
         <Card>
             <div className={styles.place_content} >
-                <Header level={4}>{place.name} </Header>
+                <Header data-cy="placeName" level={4}>{place.name} </Header>
                 <hr />
                 <div data-cy="placeAddress">{`Address: ${place.location.formatted_address}`}</div>
                 <div>{`Region: ${place.location.region}`}</div>

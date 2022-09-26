@@ -37,14 +37,14 @@ export default function Places() {
     return <Container>
         <Row wrap="wrap">
             {places.map(place =>
-                <Col sm={12} md={6} lg={4} className="pa-xsm" key={place.fsq_id}>
+                <Col data-cy="places" sm={12} md={6} lg={4} className="pa-xsm" key={place.fsq_id} >
                     <PlaceItem place={place} />
                 </Col>)}
-            {!ifPlaces && <Col sm={12} className="text-center">
+            {!ifPlaces && <Col data-cy="noPlaces" sm={12} className="text-center">
                 <Message size="large" message={`We couldn't find any result for "${query}".`} />
             </Col>}
             <Col sm={12} className="text-center">
-                <Button color="primary" onClick={() => navigate("/")}>Search Again</Button>
+                <Button data-cy="searchAgain" color="primary" onClick={() => navigate("/")}>Search Again</Button>
             </Col>
         </Row>
     </Container>
