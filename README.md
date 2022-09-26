@@ -1,46 +1,42 @@
-# Getting Started with Create React App
+## About
+Simple app where clients can search shops near their current location. 
+This app uses "navigator.geolocation" for obtaining client location coords and "FORESQUARE v3 places API" for getting places near client current location. If "navigator.geolocation" is not supported i used external service who obtains client location by Ip address.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Built with
+Project is created with:
+* Technology: React(Typescript)
+    * React router - for page navigation
+    * Axios: for fetching data from FOURSQUARE Api
+    * Cypress: for app E2E testing
+    * Design: Custom css used in 'Common' components like button, inpu, card ...  
+    * React Grid: responsive grid system
+* App structure:
+    * Layout:  app layout (ex: nav, main, footer, aside)
+    * Common:  shared reusable commponents like button, input, modal ...
+    * Components:  commponents like navigation, footer with not many features
+    * Pages: app page components like Home, Places ...
+    * Features: places( components, design, api )
+    * Context - for storing places returned from the Api ( not needed but if the app grows switching to Redux Toolkit with RTK will be better option)
+    * Hooks:  custom hooks 
+    * Types:  custom types 
+    * Models: creating objects using Class so we can have more controll of reusing the same object
+   
 
-In the project directory, you can run:
+## Installation 
+**_NOTE:_**  The project contains *.env* file that is bed practice but for testing purpose I pushed that file because 'FOURSQUARE v3 places api' uses token who we need to send via Request headers(Authorization) so we are allowed to access the Api. This token is created by me and is added in that *.env* file. If anyone wants to change that token and use another feel free to change the token in that *.env* file. I'm writing this note because i'm not sure that person who will use this app has FOURSQUARE account and token.
+1. Clone the repo: *git clone https://github.com/alintertec/izicap.git*
+2. Install NPM packages: *npm install*
+3. Run the app in the dev mode: *npm run start*
+4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+5. Run the tests: *npm run cy:open*
+6. Production build: *npm run build* 
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## License
+Distributed under the MIT License. See LICENSE.txt for more information.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contact
+Email: atanas.lazarovski@intertec.io
+Project link: https://github.com/alintertec/izicap

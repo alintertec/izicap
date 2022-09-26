@@ -9,7 +9,6 @@ import { getLocationByIp } from 'services/locationCoords';
 import { Container, Row, Col } from 'react-grid-system';
 import { useEffect, useState, useCallback } from 'react';
 
-// fsq3c5WvdTVZScbf2l4VN/hwPYSyXFcYk0M/ZfUggENDFI8=
 export default function Home() {
     const navigate = useNavigate();
     const [query, setQuery] = useState("");

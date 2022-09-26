@@ -35,7 +35,7 @@ export const getPlacePhotosById = async ({ fsq_id, limit = 6 }: IPhotoProps): Pr
     }
 }
 
-export const getPlaceById = async ({ fsq_id, limit = 6 }: IPhotoProps): Promise<ResponseType<PlaceType | null>> => {
+export const getPlaceById = async ({ fsq_id }: IPhotoProps): Promise<ResponseType<PlaceType | null>> => {
     try {
         const { data } = await axios.get<PlaceType>(`/${fsq_id}`);
         return { success: true, result: data, message: "" };
