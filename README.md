@@ -24,13 +24,15 @@ Project is created with:
    
 
 ## Installation 
-**_NOTE:_**  The project contains *.env* file that is bed practice but for testing purpose I pushed that file because 'FOURSQUARE v3 places api' uses token who we need to send via Request headers(Authorization) so we are allowed to access the Api. This token is created by me and is added in that *.env* file. If anyone wants to change that token and use another feel free to change the token in that *.env* file. I'm writing this note because i'm not sure that person who will use this app has FOURSQUARE account and token.
 1. Clone the repo: *git clone https://github.com/alintertec/izicap.git*
 2. Install NPM packages: *npm install*
-3. Run the app in the dev mode: *npm run start*
-4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-5. Run the tests: *npm run cy:open*
-6. Production build: *npm run build* 
+3. Create *.env* file with:
+    * REACT_APP_ENDPOINT = "https://api.foursquare.com/v3/places"
+    * REACT_APP_FOURSQUARE = "Your Foursquare Token"
+4. Run the app in the dev mode: *npm run start*
+5. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+6. Run the tests: *npm run cy:open*
+7. Production build: *npm run build* 
 
 
 ## License
